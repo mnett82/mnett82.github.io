@@ -1,0 +1,43 @@
+# You must change these to your own details.
+[package]
+authors = ["Michael Nett <mnett82@gmail.com>"]
+edition = "2018"
+name = "meet"
+version = "0.1.0"
+workspace = ".."
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+# If you uncomment this line, it will enable `wee_alloc`:
+#default = ["wee_alloc"]
+
+[dependencies.js-sys]
+version = "0.3.46"
+
+[dependencies.wasm-bindgen]
+version = "0.2.45"
+
+[dependencies.web-sys]
+features = [
+  "CanvasRenderingContext2d",
+  "console",
+  "Document",
+  "Element",
+  "HtmlCanvasElement",
+  "Window",
+]
+version = "0.3.22"
+
+[dependencies.wee_alloc]
+optional = true
+version = "0.4.2"
+
+# These crates are used for running unit tests.
+[dev-dependencies]
+console_error_panic_hook = "0.1.5"
+futures = "0.1.27"
+js-sys = "0.3.22"
+wasm-bindgen-futures = "0.3.22"
+wasm-bindgen-test = "0.2.45"
